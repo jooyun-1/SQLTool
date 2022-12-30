@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--mapper namespace="com.sinsiway.intern.model.repository.DBInfo.DBInfoDAO">  -->
+<mapper namespace="Info">
+	<select id="selectAll" resultType="DBInfo">
+		select * from SW_DATABASE
+	</select>
+	
+	<select id="selectOne" parameterType="int" resultType="DBInfo">
+		select * from SW_DATABASE where database_id = #{database_id}
+	</select>
+	
+	<insert id="insert" parameterType="DBInfo" useGeneratedKeys="true" keyProperty="database_id">
+		insert into SW_DATABASE(type,ip,port,database,username,password)
+		values(#{type},#{ip},#{port},#{database},#{username},#{password})
+
+	</insert>
+	
+	<update id="update" parameterType="DBInfo">
+		update SW_DATABASE set type = #{type}, ip = #{ip}, port = #{port}, database = #{database},
+		username = #{username}, password = #{password} where database_id = #{database_id}
+	</update>
+	
+	<delete id="delete" parameterType="DBInfo">
+		delete from SW_DATABASE where database_id= #{database_id}
+	</delete>
+</mapper>

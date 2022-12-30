@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias type="com.sinsiway.intern.domain.SW_Database" alias="DBInfo"/>
+		<typeAlias type="com.sinsiway.intern.domain.SW_Execute_Log" alias="Log_Info"/>
+		<typeAlias type="com.sinsiway.intern.domain.SW_Connection_Log" alias="ConnLog"/>
+		<typeAlias type="com.sinsiway.intern.domain.SW_Database_Reject" alias="DBReject"/>
+	</typeAliases>
+	
+	<mappers>
+		<mapper resource="com/sinsiway/intern/mapper/DBInfoMapper.xml"/>
+		<mapper resource="com/sinsiway/intern/mapper/ExecuteLogMapper.xml"/>
+		<mapper resource="com/sinsiway/intern/mapper/ConnLogMapper.xml"/>
+		<mapper resource="com/sinsiway/intern/mapper/DBRejectMapper.xml"/>
+	</mappers>
+</configuration>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Reject">
+	<insert id="insert" parameterType = "DBReject" useGeneratedKeys="true" keyProperty="policy_id">
+		insert into SW_DATABASE_REJECT(database_id,client_ip) values(#{database_id},#{client_ip})
+	</insert>
+	<select id="selectOne" parameterType = "int" resultType = "String">
+		select client_ip from SW_DATABASE_REJECT where database_id = #{database_id}
+	</select>
+	<delete id="delete" parameterType = "DBReject">
+		delete from SW_DATABASE_REJECT where database_id = #{database_id} and client_ip = #{client_ip}
+	</delete>
+</mapper>
